@@ -1,0 +1,41 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Cadastro de Frequência Manual</mat-card-title>
+        <mat-card-subtitle>Para ser utilizado quando o aluno não conseguir marcar a presença, insira a mátricula e o restante dos dados serão preenchidos.</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="aluno.avatar">
+        <figure class="image is-128x128" class="is-flex is-justify-content-center">
+          <img class="is-rounded" src="{{aluno.avatar}}" alt="">
+        </figure>
+      </div>
+      <form class="field ml-4">
+        <label for="matricula" class="label">Mátricula</label>
+        <div class="control">
+          <input name="matricula" type="text" class="input" [(ngModel)]="aluno.matricula" (change)="getAlunoById(aluno.matricula)">
+        </div>
+        <div class="control">
+          <label for="nome" class="label">Nome</label>
+          <input name="nome" type="text" class="input" [(ngModel)]="aluno.nome" readonly>
+        </div>
+        <label for="disciplina" class="label">Disciplina</label>
+        <div class="control">
+          <input name="disciplina" type="text" class="input" [(ngModel)]="aluno.disciplina" reaodnly>
+        </div>
+        <label for="curso" class="label">Curso</label>
+        <div class="control">
+          <input name="curso" class="input" type="text" [(ngModel)]="aluno.curso" readonly>
+        </div>
+        <div class="control">
+          <label for="data" class="label">Data</label>
+          <input name="data" type="date" class="input">
+        </div>
+        <div class="buttons mt-3">
+          <button mat-raised-button color="primary">Enviar</button>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="start">
+    </mat-card-actions>
+</mat-card>
+
